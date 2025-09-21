@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         element: <Login />,
     },
     {
-        path: "/client",
+        path: "/client-home",
         element: <ClientLayout />,
         children: [
             {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: "/freelancer",
+        path: "/freelancer-home",
         element: <FreelancerLayout />,
         children: [
             {
