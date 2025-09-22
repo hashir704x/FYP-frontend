@@ -4,6 +4,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import FreelancerLayout from "./layouts/FreelancerLayout";
 import ClientLayout from "./layouts/ClientLayout";
+import SearchPeople from "./pages/SearchPeople";
 
 const router = createBrowserRouter([
     {
@@ -11,15 +12,19 @@ const router = createBrowserRouter([
         element: <LandingPage />,
     },
     {
-        path: "/signup",
+        path: "signup",
         element: <SignUp />,
     },
     {
-        path: "/login",
+        path: "login",
         element: <Login />,
     },
     {
-        path: "/client-home",
+        path: "search-people",
+        element: <SearchPeople />
+    },
+    {
+        path: "client-home",
         element: <ClientLayout />,
         children: [
             {
@@ -29,7 +34,7 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: "/freelancer-home",
+        path: "freelancer-home",
         element: <FreelancerLayout />,
         children: [
             {
