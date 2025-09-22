@@ -15,7 +15,7 @@ import GoogleIcon from "../assets/google-icon.png";
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     return (
-        <div className="flex bg-black text-white sm:max-h-screen h-screen overflow-hidden p-6">
+        <div className="flex bg-black text-white sm:max-h-screen  overflow-hidden p-6">
             <div className="flex-1 flex flex-col justify-center items-center">
                 <div className="mt-6 sm:mt-4">
                     <h1 className="text-xl text-center sm:text-3xl font-medium">
