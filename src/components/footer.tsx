@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Brand */}
                 <div>
-                    <h2 className="text-white text-2xl font-bold">FYP App</h2>
+                    <h2 className="text-white text-2xl font-bold">Freelansync</h2>
                     <p className="mt-2 text-sm text-gray-400">
                         Connecting clients and freelancers for short tasks and
                         long-term projects.
