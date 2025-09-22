@@ -2,9 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
-import FreelancerLayout from "./Layouts/FreelancerLayout";
-import ClientLayout from "./Layouts/ClientLayout";
-
+import FreelancerLayout from "./layouts/FreelancerLayout";
+import ClientLayout from "./layouts/ClientLayout";
 
 const router = createBrowserRouter([
     {

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { userAuthStore } from "@/store/userAuthStore";
 import { Button } from "@/components/ui/button";
-
+import BannerImage from "../assets/landing-page-image.jpg";
+import { Search } from "lucide-react";
 const LandingPage = () => {
     const user = userAuthStore((state) => state.user);
 
     return (
         <div>
-            <header className="py-4 px-2 sm:px-6 border flex items-center justify-between">
+            <header className="py-4 px-2 sm:px-6 flex items-center justify-between">
                 <h1 className="font-semibold text-lg sm:text-2xl ">
                     Freelansync
                 </h1>
@@ -20,9 +21,8 @@ const LandingPage = () => {
                                     ? "/client-home"
                                     : "/freelancer-home"
                             }
-                            className="bg-[var(--my-blue)] text-white px-3 py-2 rounded-md font-medium"
                         >
-                            Home
+                            <Button variant="custom">Home</Button>
                         </Link>
                     </div>
                 ) : (
@@ -36,6 +36,63 @@ const LandingPage = () => {
                     </div>
                 )}
             </header>
+
+            <section className="sm:px-28">
+                {/* Image section */}
+                <div className="h-[450px] sm:h-[550px] sm:mt-8 relative rounded-3xl sm:overflow-hidden">
+                    <img
+                        src={BannerImage}
+                        alt="Banner-image"
+                        className="w-full h-full object-cover "
+                    />
+                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/60" />
+                    <div className="absolute top-36 sm:top-14 sm:left-12 sm:w-[600px] px-5">
+                        <h1 className="text-3xl sm:text-7xl sm:leading-20 font-semibold text-white text-wrap">
+                            Connecting clients in need to freelancers who
+                            deliver
+                        </h1>
+                        <div className=" w-fit">
+                            {!user ? (
+                                <div className="flex gap-3 sm:gap-6 mt-4 sm:mt-8 flex-col sm:flex-row">
+                                    <Link to="/signup?role=client ">
+                                        <Button
+                                            variant="custom"
+                                            className="sm:p-6 font-medium sm:text-lg w-[250px]"
+                                        >
+                                            Signup as Client
+                                        </Button>
+                                    </Link>
+                                    <Link to="/signup?role=freelancer">
+                                        <Button
+                                            variant="custom"
+                                            className="sm:p-6 font-medium sm:text-lg w-[250px]"
+                                        >
+                                            Signup as Freelancer
+                                        </Button>
+                                    </Link>
+                                </div>
+                            ) : (
+                                <Link
+                                    to={
+                                        user.role === "client"
+                                            ? "/client-home"
+                                            : "/freelancer-home"
+                                    }
+                                >
+                                    <Button variant="custom">
+                                        Start working
+                                    </Button>
+                                </Link>
+                            )}
+                            <Link to="">
+                                <button className="w-full mt-3 bg-white text-[var(--my-blue)] sm:text-lg font-semibold flex justify-center items-center gap-4 p-1 sm:p-2 rounded-md cursor-pointer">
+                                    Search People <Search/>
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
