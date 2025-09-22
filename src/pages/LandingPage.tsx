@@ -5,6 +5,7 @@ import BannerImage from "../assets/landing-page-image.jpg";
 import { Search } from "lucide-react";
 import SmallCards from "@/components/landingPageComponents/smallCards";
 import Slider from "@/components/landingPageComponents/slider";
+import Footer from "@/components/footer";
 const LandingPage = () => {
     const user = userAuthStore((state) => state.user);
 
@@ -88,24 +89,34 @@ const LandingPage = () => {
                             )}
                             <Link to="/search-people">
                                 <button className="w-full mt-3 bg-white text-[var(--my-blue)] sm:text-lg font-semibold flex justify-center items-center gap-4 p-1 sm:p-2 rounded-md cursor-pointer">
-                                    Search People <Search/>
+                                    Search People <Search />
                                 </button>
                             </Link>
                         </div>
                     </div>
                 </div>
 
-
                 <div className="px-4 flex flex-col gap-16">
+                    {/* Small Cards Section */}
+                    <SmallCards />
 
-                {/* Small Cards Section */}
-                <SmallCards />
+                    {/* Slider */}
+                    <Slider />
 
-                {/* Slider */}
-
-                <Slider />
+                    <div className="bg-gradient-to-tl from-[#0a1f63] via-[#0532a9] to-[#3b82f6] h-[180px] rounded-lg flex flex-col items-center justify-center gap-6 px-4">
+                        <h1 className="text-xl sm:text-4xl font-semibold text-white">
+                            Find your next hire for a short task or long-term
+                            growth
+                        </h1>
+                        <Link to="#">
+                            <button className="text-black bg-white p-2 text-xs rounded-lg cursor-pointer">
+                                Explore Freelancers
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };
