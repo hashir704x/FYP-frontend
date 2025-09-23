@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import SmallCards from "@/components/landingPageComponents/smallCards";
 import Slider from "@/components/landingPageComponents/slider";
 import Footer from "@/components/footer";
+
 const LandingPage = () => {
     const user = userAuthStore((state) => state.user);
 
@@ -103,13 +104,13 @@ const LandingPage = () => {
                     {/* Slider */}
                     <Slider />
 
-                    <div className="bg-gradient-to-tl from-[#0a1f63] via-[#0532a9] to-[#3b82f6] h-[180px] rounded-lg flex flex-col items-center justify-center gap-6 px-4">
+                    <div className="bg-gradient-to-tl from-[#0a1f63] via-[#0532a9] to-[#3b82f6] h-[220px] rounded-lg flex flex-col items-center justify-center gap-6 px-4">
                         <h1 className="text-xl sm:text-4xl font-semibold text-white">
                             Find your next hire for a short task or long-term
                             growth
                         </h1>
                         <Link to="#">
-                            <button className="text-black bg-white p-2 text-xs rounded-lg cursor-pointer">
+                            <button className="text-black bg-white p-3 text-xs sm:text-lg rounded-lg cursor-pointer">
                                 Explore Freelancers
                             </button>
                         </Link>

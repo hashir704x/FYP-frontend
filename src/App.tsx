@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import FreelancerLayout from "./layouts/FreelancerLayout";
 import ClientLayout from "./layouts/ClientLayout";
 import SearchPeople from "./pages/SearchPeople";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     },
     {
         path: "search-people",
-        element: <SearchPeople />
+        element: <SearchPeople />,
     },
     {
         path: "client-home",
@@ -50,7 +51,12 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-    return <RouterProvider router={router} />;
+    return (
+        <>
+            <RouterProvider router={router} />
+            <Toaster position="bottom-right" richColors/>
+        </>
+    );
 };
 
 export default App;

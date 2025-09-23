@@ -1,13 +1,13 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-type UserRole = "client" | "freelancer";
+export type UserRoleType = "client" | "freelancer";
 
 type User = {
     id: string;
-    name: string;
+    username: string;
     email: string;
-    role: UserRole;
+    role: UserRoleType;
 };
 
 type AuthStateType = {
