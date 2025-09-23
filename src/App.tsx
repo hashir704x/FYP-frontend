@@ -6,6 +6,7 @@ import FreelancerLayout from "./layouts/FreelancerLayout";
 import ClientLayout from "./layouts/ClientLayout";
 import SearchPeople from "./pages/SearchPeople";
 import { Toaster } from "sonner";
+import ClientDashboard from "./pages/ClientDashboard";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <div>Client Page</div>,
+                element: <ClientDashboard />
             },
         ],
     },

@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { userAuthStore } from "@/store/userAuthStore";
 import { Navigate } from "react-router-dom";
+import NavigationSidebar from "@/components/navigationSidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
 const ClientLayout = () => {
     const user = userAuthStore((state) => state.user);
@@ -8,7 +10,14 @@ const ClientLayout = () => {
     if (user.role !== "client") return <Navigate to="/" />;
     return (
         <div>
-            <Outlet />
+            <SidebarProvider>
+                <NavigationSidebar />
+                <div>
+
+                    <SidebarTrigger className="md:hidden"/>
+                    <Outlet />
+                </div>
+            </SidebarProvider>
         </div>
     );
 };
