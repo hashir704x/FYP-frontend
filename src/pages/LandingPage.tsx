@@ -55,7 +55,7 @@ const LandingPage = () => {
                             Connecting clients in need to freelancers who
                             deliver
                         </h1>
-                        <div className="w-fit">
+                        <div className="w-fit mt-2">
                             {!user ? (
                                 <div className="flex gap-3 sm:gap-6 mt-4 sm:mt-8 flex-col sm:flex-row">
                                     <Link to="/signup?role=client">
@@ -77,20 +77,21 @@ const LandingPage = () => {
                                 </div>
                             ) : (
                                 <Link
+                                
                                     to={
                                         user.role === "client"
                                             ? "/client-home"
                                             : "/freelancer-home"
                                     }
                                 >
-                                    <Button variant="custom">
+                                    <Button variant="custom" className="w-[150px] h-[40px]">
                                         Start working
                                     </Button>
                                 </Link>
                             )}
                             <Link to="/search-people">
-                                <button className="w-full mt-3 bg-white text-[var(--my-blue)] sm:text-lg font-semibold flex justify-center items-center gap-4 p-1 sm:p-2 rounded-md cursor-pointer">
-                                    Search People <Search />
+                                <button className="mt-3 bg-white text-[var(--my-blue)] font-semibold flex justify-center items-center gap-3 h-[40px] rounded-sm cursor-pointer  w-full text-sm">
+                                    Search People <Search size={20}/>
                                 </button>
                             </Link>
                         </div>

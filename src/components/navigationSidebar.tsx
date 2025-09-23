@@ -79,7 +79,7 @@ export default function NavigationSidebar() {
                             {sidebarItems.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild className="p-6">
-                                        <Link to="#">
+                                        <Link to="#" onClick={toggleSidebar}>
                                             <item.icon />
                                             <span>{item.title}</span>
                                         </Link>
