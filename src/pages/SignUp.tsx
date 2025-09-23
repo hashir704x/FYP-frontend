@@ -11,17 +11,17 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import GoogleIcon from "../assets/google-icon.png";
-import { toast } from "sonner";
 import { userAuthStore } from "@/store/userAuthStore";
 import { type UserRoleType } from "@/store/userAuthStore";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
+import { toastMaker } from "@/components/toastMaker";
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const loginUser = userAuthStore((state) => state.login);
+    const setUser = userAuthStore((state) => state.setUser);
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const [role, setRole] = useState<UserRoleType | "">(() => {
@@ -33,22 +33,47 @@ const SignUp = () => {
 
     function handleCreateAccount(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         e.preventDefault();
-        console.log(role);
         if (!username || !email || !password || !role) {
-            toast.custom(
-                () => (
-                    <div className="bg-red-600 text-white flex gap-2 items-center sm:p-4 p-2 rounded-md justify-center">
-                        <CircleX />
-                        <span className="sm:text-lg">Fields are empty</span>
-                    </div>
-                ),
-                { duration: 3000 }
-            );
+            toastMaker({
+                className:
+                    "bg-red-600 text-white flex gap-2 items-center sm:p-4 p-2 rounded-md justify-center",
+                icon: CircleX,
+                text: "Fields are empty",
+            });
             return;
         }
-        console.log("Data:", username, email, password, role);
+
+        if (username.length < 3) {
+            toastMaker({
+                className:
+                    "bg-red-600 text-white flex gap-2 items-center sm:p-4 p-2 rounded-md justify-center",
+                icon: CircleX,
+                text: "Username is too short",
+            });
+            return;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            toastMaker({
+                className:
+                    "bg-red-600 text-white flex gap-2 items-center sm:p-4 p-2 rounded-md justify-center",
+                icon: CircleX,
+                text: "Invalid email",
+            });
+            return;
+        }
+
+        if (password.length < 5) {
+            toastMaker({
+                className:
+                    "bg-red-600 text-white flex gap-2 items-center sm:p-4 p-2 rounded-md justify-center",
+                icon: CircleX,
+                text: "Password is too short",
+            });
+            return;
+        }
         // here user data will be sent to backend, and the response data will be stored in auth store, but for now setting dummy data.
-        loginUser({
+        setUser({
             id: "user123",
             email: email,
             username: username,

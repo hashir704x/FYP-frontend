@@ -12,18 +12,18 @@ type User = {
 
 type AuthStateType = {
     user: User | null;
-    isLoggedIn: boolean;
-    login: (user: User) => void;
-    logout: () => void;
+    isUserAvailable: boolean;
+    setUser: (user: User) => void;
+    reset: () => void;
 };
 
 const userAuthStore = create(
     persist<AuthStateType>(
         (set) => ({
             user: null,
-            isLoggedIn: false,
-            login: (user) => set({ user: user, isLoggedIn: true }),
-            logout: () => set({ user: null, isLoggedIn: false }),
+            isUserAvailable: false,
+            setUser: (user) => set({ user: user, isUserAvailable: true }),
+            reset: () => set({ user: null, isUserAvailable: false }),
         }),
         { name: "auth-storage", storage: createJSONStorage(() => localStorage) }
     )
