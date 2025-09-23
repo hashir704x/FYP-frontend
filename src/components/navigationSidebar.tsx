@@ -23,6 +23,7 @@ import {
     Settings,
     LogOut,
     CircleX,
+    type LucideProps,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { userAuthStore } from "@/store/userAuthStore";
@@ -51,7 +52,13 @@ const freelancerSidebarItems = [
 export default function NavigationSidebar() {
     const { toggleSidebar } = useSidebar();
     const user = userAuthStore((state) => state.user);
-    let sidebarItems = [];
+    let sidebarItems: {
+        title: string;
+        url: string;
+        icon: React.ForwardRefExoticComponent<
+            Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+        >;
+    }[] = [];
     if (user?.role === "client") sidebarItems = clientSidebarItems;
     else if (user?.role === "freelancer") sidebarItems = freelancerSidebarItems;
 
@@ -69,7 +76,7 @@ export default function NavigationSidebar() {
                     <SidebarGroupLabel className="text-white">Menu</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {clientSidebarItems.map((item) => (
+                            {sidebarItems.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild className="p-6">
                                         <Link to="#">
