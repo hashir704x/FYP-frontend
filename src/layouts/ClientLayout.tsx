@@ -12,8 +12,7 @@ const ClientLayout = () => {
         <div>
             <SidebarProvider>
                 <NavigationSidebar />
-                <div>
-
+                <div className="w-full">
                     <SidebarTrigger className="md:hidden"/>
                     <Outlet />
                 </div>

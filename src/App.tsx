@@ -53,10 +53,10 @@ const router = createBrowserRouter([
 
 const App = () => {
     return (
-        <>
+        <main>
             <RouterProvider router={router} />
             <Toaster position="bottom-right" richColors/>
-        </>
+        </main>
     );
 };
 
