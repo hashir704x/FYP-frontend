@@ -1,10 +1,8 @@
-
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
@@ -37,10 +35,10 @@ export default function ClientLineChart() {
     return (
         <Card className="w-full">
             <CardHeader>
-                <CardTitle>Area Chart</CardTitle>
-                <CardDescription>
-                    Showing total visitors for the last 6 months
-                </CardDescription>
+                <CardTitle>Payment Summary</CardTitle>
+                <span className="text-[#9291A5] text-sm mt-1">Total Spendings</span>
+                <h2 className="font-bold text-xl -mt-2">Rs. 50000</h2>
+               
             </CardHeader>
             <CardContent className="p-0">
                 <ChartContainer config={chartConfig} className="mt-[55px]">
@@ -60,7 +58,7 @@ export default function ClientLineChart() {
                             tickMargin={8}
                             tickFormatter={(value) => value.slice(0, 3)}
                         />
-                      
+
                         <ChartTooltip
                             cursor={false}
                             content={<ChartTooltipContent indicator="line" />}

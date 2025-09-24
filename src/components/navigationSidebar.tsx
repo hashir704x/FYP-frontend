@@ -11,7 +11,7 @@ import {
     SidebarFooter,
     useSidebar,
 } from "@/components/ui/sidebar";
-
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
     Home,
     PlusCircle,
@@ -51,6 +51,7 @@ const freelancerSidebarItems = [
 
 export default function NavigationSidebar() {
     const { toggleSidebar } = useSidebar();
+    const isMobile = useIsMobile();
     const user = userAuthStore((state) => state.user);
     let sidebarItems: {
         title: string;
@@ -79,7 +80,12 @@ export default function NavigationSidebar() {
                             {sidebarItems.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild className="p-6">
-                                        <Link to="#" onClick={toggleSidebar}>
+                                        <Link
+                                            to="#"
+                                            onClick={() => {
+                                                if (isMobile) toggleSidebar();
+                                            }}
+                                        >
                                             <item.icon />
                                             <span>{item.title}</span>
                                         </Link>
