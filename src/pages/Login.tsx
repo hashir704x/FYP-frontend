@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff, CircleX } from "lucide-react";
 
@@ -14,7 +14,16 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const setUser = userAuthStore((state) => state.setUser);
+    const isUserAvailable = userAuthStore((state) => state.isUserAvailable);
+    const user = userAuthStore((state) => state.user);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isUserAvailable) {
+            if (user?.role === "client") navigate("/client-dashboard?active=Dashboard");
+            else navigate("/freelancer-dashboard?active=Dashboard");
+        }
+    }, []);
 
     function handleLogin(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         e.preventDefault();
@@ -57,8 +66,8 @@ const Login = () => {
             username: username,
             role: role,
         });
-        if (role === "client") navigate("/client-home");
-        else navigate("/freelancer-home");
+        if (role === "client") navigate("/client-dashboard?active=Dashboard");
+        else navigate("/freelancer-dashboard?active=Dashboard");
     }
 
     function handleGoogleLogin(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
