@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <SearchPeople />,
     },
     {
-        path: "client-home",
+        path: "client-dashboard",
         element: <ClientLayout />,
         children: [
             {
