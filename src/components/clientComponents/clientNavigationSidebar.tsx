@@ -30,7 +30,7 @@ import { userAuthStore } from "@/store/userAuthStore";
 
 const clientSidebarItems = [
     { title: "Dashboard", url: "/client?active=Dashboard", icon: Home },
-    { title: "Post a Project", url: "/client/post-project", icon: PlusCircle },
+    { title: "Create new Project", url: "/client/create-project?active=Create-Project", icon: PlusCircle },
     { title: "My Projects", url: "/client/all-projects?active=All-Projects", icon: FolderKanban },
     { title: "Proposals", url: "/client/proposals", icon: FileText },
     { title: "Payments", url: "/client/milestones", icon: Wallet },

@@ -1,6 +1,6 @@
 import { Bell, Search } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
-import { SidebarTrigger } from "./ui/sidebar";
+import { SidebarTrigger } from "../ui/sidebar";
 
 const ClientNavbar = () => {
     const [searchParams] = useSearchParams();

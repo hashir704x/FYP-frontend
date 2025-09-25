@@ -3,8 +3,8 @@ import { userAuthStore } from "@/store/userAuthStore";
 import { Button } from "@/components/ui/button";
 import BannerImage from "../assets/landing-page-image.jpg";
 import { Search } from "lucide-react";
-import SmallCards from "@/components/landingPageComponents/smallCards";
-import Slider from "@/components/landingPageComponents/slider";
+import SmallCards from "@/components/landingPageSmallCards";
+import Slider from "@/components/landingPageSlider";
 import Footer from "@/components/footer";
 
 const LandingPage = () => {

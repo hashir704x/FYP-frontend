@@ -1,9 +1,9 @@
-import face1 from "../../assets/face1.webp";
-import face2 from "../../assets/face2.webp";
-import face3 from "../../assets/face3.jpeg";
-import face4 from "../../assets/face4.webp";
-import face5 from "../../assets/face5.webp";
-import face6 from "../../assets/face6.webp";
+import face1 from "@/assets/face1.webp";
+import face2 from "@/assets/face2.webp";
+import face3 from "@/assets/face3.jpeg";
+import face4 from "@/assets/face4.webp";
+import face5 from "@/assets/face5.webp";
+import face6 from "@/assets/face6.webp";
 
 import {
     Computer,

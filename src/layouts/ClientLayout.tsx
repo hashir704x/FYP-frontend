@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { userAuthStore } from "@/store/userAuthStore";
 import { Navigate } from "react-router-dom";
-import ClientNavigationSidebar from "@/components/clientNavigationSidebar";
+import ClientNavigationSidebar from "@/components/clientComponents/clientNavigationSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import ClientNavbar from "@/components/clientNavbar";
+import ClientNavbar from "@/components/clientComponents/clientNavbar";
 
 const ClientLayout = () => {
     const user = userAuthStore((state) => state.user);

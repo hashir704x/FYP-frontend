@@ -1,9 +1,9 @@
-import ClientPieChart from "@/components/clientDashboardComponents/clientPieChart";
-import ClientLineChart from "@/components/clientDashboardComponents/clientLineChart";
+import ClientPieChart from "@/components/clientComponents/clientPieChart";
+import ClientLineChart from "@/components/clientComponents/clientLineChart";
 import { userAuthStore } from "@/store/userAuthStore";
 import { Button } from "@/components/ui/button";
 import { SquarePlus } from "lucide-react";
-import ProjectsTable from "../../components/clientDashboardComponents/clientActiveProjectsTable";
+import ProjectsTable from "../../components/clientComponents/clientActiveProjectsTable";
 import UserImage from "../../assets/face1.webp";
 import { type ClientActivityItemType } from "@/Types";
 

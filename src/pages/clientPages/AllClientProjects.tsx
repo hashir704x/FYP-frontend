@@ -1,5 +1,5 @@
-import ClientActiveProjectsTable from "@/components/clientDashboardComponents/clientActiveProjectsTable";
-import ClientCompletedProjectsTable from "@/components/clientDashboardComponents/clientCompletedProjectsTable";
+import ClientActiveProjectsTable from "@/components/clientComponents/clientActiveProjectsTable";
+import ClientCompletedProjectsTable from "@/components/clientComponents/clientCompletedProjectsTable";
 import { Button } from "@/components/ui/button";
 import { SquarePlus } from "lucide-react";
 

@@ -8,6 +8,7 @@ import SearchPeople from "./pages/SearchPeople";
 import { Toaster } from "sonner";
 import ClientDashboard from "./pages/clientPages/ClientDashboard";
 import ClientProjects from "./pages/clientPages/AllClientProjects";
+import CreateProject from "./pages/clientPages/CreateProject";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 path: "all-projects",
                 element: <ClientProjects />,
             },
+            {
+                path: "create-project",
+                element: <CreateProject />
+            }
         ],
     },
     {
