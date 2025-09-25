@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { userAuthStore } from "@/store/userAuthStore";
 import { Navigate } from "react-router-dom";
-import NavigationSidebar from "@/components/navigationSidebar";
+import ClientNavigationSidebar from "@/components/clientNavigationSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import ClientNavbar from "@/components/clientNavbar";
 
@@ -12,7 +12,7 @@ const ClientLayout = () => {
     return (
         <div>
             <SidebarProvider>
-                <NavigationSidebar />
+                <ClientNavigationSidebar />
                 <div className="w-full">
                     <ClientNavbar />
                     <Outlet />

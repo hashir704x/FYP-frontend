@@ -35,8 +35,8 @@ const SignUp = () => {
 
     useEffect(() => {
         if (isUserAvailable) {
-            if (user?.role === "client") navigate("/client-dashboard?active=Dashboard");
-            else navigate("/freelancer-dashboard?active=Dashboard");
+            if (user?.role === "client") navigate("/client?active=Dashboard");
+            else navigate("/freelancer?active=Dashboard");
         }
     }, []);
 
@@ -88,8 +88,8 @@ const SignUp = () => {
             username: username,
             role: role,
         });
-        if (role === "client") navigate("/client-dashboard?active=Dashboard");
-        else navigate("/freelancer-dashboard?active=Dashboard");
+        if (role === "client") navigate("/client?active=Dashboard");
+        else navigate("/freelancer?active=Dashboard");
     }
 
     function handleGoogleSignUp(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {

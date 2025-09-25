@@ -22,8 +22,8 @@ const LandingPage = () => {
                         <Link
                             to={
                                 user.role === "client"
-                                    ? "/client-dashboard?active=Dashboard"
-                                    : "/freelancer-dashboard?active=Dashboard"
+                                    ? "/client?active=Dashboard"
+                                    : "/freelancer?active=Dashboard"
                             }
                         >
                             <Button variant="custom">Home</Button>
@@ -80,8 +80,8 @@ const LandingPage = () => {
                                 
                                     to={
                                         user.role === "client"
-                                            ? "/client-dashboard?active=Dashboard"
-                                            : "/freelancer-dashboard?active=Dashboard"
+                                            ? "/client?active=Dashboard"
+                                            : "/freelancer?active=Dashboard"
                                     }
                                 >
                                     <Button variant="custom" className="w-[150px] h-[40px]">

@@ -6,7 +6,8 @@ import FreelancerLayout from "./layouts/FreelancerLayout";
 import ClientLayout from "./layouts/ClientLayout";
 import SearchPeople from "./pages/SearchPeople";
 import { Toaster } from "sonner";
-import ClientDashboard from "./pages/ClientDashboard";
+import ClientDashboard from "./pages/clientPages/ClientDashboard";
+import ClientProjects from "./pages/clientPages/AllClientProjects";
 
 const router = createBrowserRouter([
     {
@@ -26,17 +27,21 @@ const router = createBrowserRouter([
         element: <SearchPeople />,
     },
     {
-        path: "client-dashboard",
+        path: "client",
         element: <ClientLayout />,
         children: [
             {
                 index: true,
-                element: <ClientDashboard />
+                element: <ClientDashboard />,
+            },
+            {
+                path: "all-projects",
+                element: <ClientProjects />,
             },
         ],
     },
     {
-        path: "freelancer-home",
+        path: "freelancer",
         element: <FreelancerLayout />,
         children: [
             {
@@ -55,7 +60,7 @@ const App = () => {
     return (
         <main>
             <RouterProvider router={router} />
-            <Toaster position="bottom-right" richColors/>
+            <Toaster position="bottom-right" richColors />
         </main>
     );
 };

@@ -3,8 +3,8 @@ import ClientLineChart from "@/components/clientDashboardComponents/clientLineCh
 import { userAuthStore } from "@/store/userAuthStore";
 import { Button } from "@/components/ui/button";
 import { SquarePlus } from "lucide-react";
-import ProjectsTable from "../components/clientDashboardComponents/clientProjectsTable";
-import UserImage from "../assets/face1.webp";
+import ProjectsTable from "../../components/clientDashboardComponents/clientActiveProjectsTable";
+import UserImage from "../../assets/face1.webp";
 import { type ClientActivityItemType } from "@/Types";
 
 const ActivityItemsData: ClientActivityItemType[] = [
@@ -39,7 +39,7 @@ const ActivityItemsData: ClientActivityItemType[] = [
         type: "Milestone",
     },
 ];
-// ${type === "Payment" ? "#D1FADF" : "#FFF3D4"}
+
 const ActivityItem = ({ date, description, title, type }: ClientActivityItemType) => {
     return (
         <div className="px-3 py-4 border-b">
