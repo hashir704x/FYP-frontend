@@ -9,12 +9,12 @@ const CreateProject = () => {
                 <input
                     type="text"
                     placeholder="Project Title"
-                    className="outline-0 border p-2"
+                    className="outline-none border p-2"
                 />
                 <input
                     type="text"
                     placeholder="Project Title"
-                    className="outline-0 border p-2"
+                    className="outline-none border p-2"
                 />
             </form>
         </div>
