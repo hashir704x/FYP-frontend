@@ -6,6 +6,8 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
+import { SquareArrowOutUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
     {
@@ -50,7 +52,7 @@ function ProgressBar(props: { progress: string }) {
         <div className="h-[10px] bg-gray-200 rounded-full w-full relative overflow-hidden">
             <div
                 className="bg-[var(--my-blue)] absolute top-0 left-0  h-full rounded-full"
-                style={{ width: props.progress }} 
+                style={{ width: props.progress }}
             />
         </div>
     );
@@ -71,7 +73,10 @@ export default function TableDemo() {
             <TableBody>
                 {projects.map((project) => (
                     <TableRow key={project.projectTitle}>
-                        <TableCell className="font-medium p-4 flex items-center">
+                        <TableCell className="font-medium p-4 flex items-center gap-2">
+                            <Link to="#">
+                            <SquareArrowOutUpRight size={16} className="stroke-[var(--my-blue)]"/>
+                            </Link>
                             {project.projectTitle}
                         </TableCell>
                         <TableCell>{project.projectCost}</TableCell>

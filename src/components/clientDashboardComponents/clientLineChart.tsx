@@ -40,9 +40,10 @@ export default function ClientLineChart() {
                 <h2 className="font-bold text-xl -mt-2">Rs. 50000</h2>
                
             </CardHeader>
-            <CardContent className="p-0">
+            <CardContent className="p-0 ">
                 <ChartContainer config={chartConfig} className="mt-[55px]">
                     <AreaChart
+                   
                         accessibilityLayer
                         data={chartData}
                         margin={{
@@ -64,6 +65,7 @@ export default function ClientLineChart() {
                             content={<ChartTooltipContent indicator="line" />}
                         />
                         <Area
+                       
                             dataKey="desktop"
                             type="natural"
                             fill="var(--my-blue)"
