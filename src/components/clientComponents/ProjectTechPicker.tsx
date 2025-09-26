@@ -79,7 +79,7 @@ export default function TechPicker({ value, onChange }: TechPickerProps) {
     const selectedOptions = value.map((v) => ({ value: v, label: v }));
 
     return (
-        <div className="w-72">
+        <div className="w-full max-w-sm">
             <CreatableSelect
                 isMulti
                 isSearchable

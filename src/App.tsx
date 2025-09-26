@@ -9,6 +9,7 @@ import { Toaster } from "sonner";
 import ClientDashboard from "./pages/clientPages/ClientDashboard";
 import ClientProjects from "./pages/clientPages/AllClientProjects";
 import CreateProject from "./pages/clientPages/CreateProject";
+import SingleProjectDetails from "./pages/clientPages/SingleProjectDetails";
 
 const router = createBrowserRouter([
     {
@@ -42,7 +43,12 @@ const router = createBrowserRouter([
             {
                 path: "create-project",
                 element: <CreateProject />
+            },
+            {
+                path: "project-details/:project-id",
+                element: <SingleProjectDetails />
             }
+
         ],
     },
     {

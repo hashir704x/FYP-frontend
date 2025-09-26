@@ -14,7 +14,7 @@ function toastMaker(props: Props) {
         () => (
             <div className={props.className}>
                 <props.icon />
-                <span className="sm:text-lg">{props.text}</span>
+                <span>{props.text}</span>
             </div>
         ),
         { duration: 3000 }
