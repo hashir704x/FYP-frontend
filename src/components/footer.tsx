@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer className="bg-black text-gray-300 py-10 mt-10">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Brand */}
+             
                 <div>
                     <h2 className="text-white text-2xl font-bold">Freelansync</h2>
                     <p className="mt-2 text-sm text-gray-400">
@@ -15,7 +15,7 @@ export default function Footer() {
                     </p>
                 </div>
 
-                {/* Internal links */}
+           
                 <div>
                     <h3 className="text-white font-semibold mb-4">
                         Quick Links
@@ -44,7 +44,7 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* Socials */}
+              
                 <div>
                     <h3 className="text-white font-semibold mb-4">Follow Us</h3>
                     <div className="flex gap-4 mt-4 items-center">
