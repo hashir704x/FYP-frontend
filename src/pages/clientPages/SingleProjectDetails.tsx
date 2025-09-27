@@ -5,7 +5,42 @@ import face4 from "@/assets/face4.webp";
 import { Button } from "@/components/ui/button";
 
 import { useState } from "react";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, UserPlus } from "lucide-react";
+import FreelancerCard from "@/components/clientComponents/freelancerCard";
+
+const FreelancersData = [
+    {
+        id: "f-1",
+        name: "Farooq Ali",
+        img: face2,
+        rating: 4,
+        profession: "Web Developer",
+        perHourFees: 5000,
+        shortDesc:
+            "Experienced web developer specializing in responsive and modern web apps.",
+    },
+    {
+        id: "f-2",
+        name: "Mike Jackson",
+        img: face3,
+        rating: 4,
+        profession: "UI/UX Designer",
+        perHourFees: 8000,
+        shortDesc:
+            "Creative UI/UX designer focused on intuitive user experiences and clean designs.",
+    },
+    {
+        id: "f-3",
+        name: "Sundar Laal",
+        img: face4,
+        rating: 2,
+        profession: "AI Developer",
+        perHourFees: 500,
+        shortDesc:
+            "Beginner AI developer working on machine learning models and data analysis projects.",
+    },
+];
+
 const SingleProjectDetails = () => {
     // const { projectId } = useParams();
     const [activeOption, setActiveOption] = useState<
@@ -16,13 +51,15 @@ const SingleProjectDetails = () => {
         <div className="p-4">
             <div className="flex flex-col gap-2 md:flex-row justify-between items-center">
                 <h1 className="text-xl md:text-2xl font-medium text-black">
-                    Project: <span className="font-semibold">Lemon Frontend</span>
+                    Project:{" "}
+                    <span className="font-semibold">Lemon Frontend</span>
                 </h1>
                 <div className="my-1 md:my-0 max-w-[350px] border flex items-center p-2 rounded-md text-sm md:text-base">
                     <button
                         onClick={() => setActiveOption("detail")}
                         className={`cursor-pointer  py-2 px-3 rounded-md transition-colors duration-300 ease-in-out ${
-                            activeOption === "detail" && "bg-[var(--my-blue)] text-white"
+                            activeOption === "detail" &&
+                            "bg-[var(--my-blue)] text-white"
                         }`}
                     >
                         Details
@@ -59,7 +96,8 @@ const SingleProjectDetails = () => {
                                 </span>
                             </h2>
                             <h2>
-                                Budget: <span className="font-bold">Rs 15000</span>
+                                Budget:{" "}
+                                <span className="font-bold">Rs 15000</span>
                             </h2>
                             <h2>
                                 Start Date:{" "}
@@ -78,13 +116,15 @@ const SingleProjectDetails = () => {
                                 Description
                             </h1>
                             <p className="font-normal text-sm md:text-base text-[#545454] mt-1 md:max-w-[1000px]">
-                                Mobile App MVP for a new digital product idea. The app
-                                will be a cross-platform solution (iOS and Android)
-                                focused on solving a specific user pain point (details to
-                                be shared with shortlisted candidates). The purpose of
-                                this MVP is to validate the core concept with early users
-                                and stakeholders, so it will include only the essential
-                                features needed for testing usability and market interest.
+                                Mobile App MVP for a new digital product idea.
+                                The app will be a cross-platform solution (iOS
+                                and Android) focused on solving a specific user
+                                pain point (details to be shared with
+                                shortlisted candidates). The purpose of this MVP
+                                is to validate the core concept with early users
+                                and stakeholders, so it will include only the
+                                essential features needed for testing usability
+                                and market interest.
                             </p>
                         </div>
 
@@ -116,7 +156,9 @@ const SingleProjectDetails = () => {
                                         alt="face"
                                         className="rounded-full w-[50px] sm:w-[60px]"
                                     />
-                                    <span className="font-medium">Khoobsurat</span>
+                                    <span className="font-medium">
+                                        Khoobsurat
+                                    </span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <img
@@ -138,7 +180,25 @@ const SingleProjectDetails = () => {
                         </div>
                     </div>
                 )}
-                {activeOption === "freelancers" && <div>freelancers</div>}
+                {activeOption === "freelancers" && (
+                    <div>
+                        <Button variant="custom" className="mt-4">
+                            <UserPlus />
+                            Add Freelancer
+                        </Button>
+
+                        <div className="mt-6">
+                            <h2 className="text-xl font-semibold">
+                                Working Freelancers
+                            </h2>
+                            <div className="flex gap-8 flex-wrap items-center justify-center md:justify-start mt-3">
+                                {FreelancersData.map((item) => (
+                                    <FreelancerCard key={item.id} {...item} />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
                 {activeOption === "milestones" && <div>milestones</div>}
             </div>
         </div>
