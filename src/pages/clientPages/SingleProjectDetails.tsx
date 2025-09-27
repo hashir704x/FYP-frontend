@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { MessageCircle, UserPlus } from "lucide-react";
 import FreelancerCard from "@/components/clientComponents/freelancerCard";
+import ProjectMilestoneTable from "@/components/clientComponents/projectMilestonesTable";
+import type { ProjectMilestonesType } from "@/Types";
 
 const FreelancersData = [
     {
@@ -38,6 +40,75 @@ const FreelancersData = [
         perHourFees: 500,
         shortDesc:
             "Beginner AI developer working on machine learning models and data analysis projects.",
+    },
+];
+
+const MilestonesData: ProjectMilestonesType[] = [
+    {
+        milestoneNumber: 1,
+        label: "Make About Page",
+        amount: 5000,
+        freelancer: {
+            img: face2,
+            name: "Farooq Ali",
+        },
+        dateCreated: "June 23, 2024",
+        status: "Completed",
+    },
+    {
+        milestoneNumber: 2,
+        label: "Make Contacts Page",
+        amount: 1000,
+        freelancer: {
+            img: face2,
+            name: "Farooq Ali",
+        },
+        dateCreated: "June 23, 2024",
+        status: "In-progress",
+    },
+    {
+        milestoneNumber: 3,
+        label: "Make Messages Api",
+        amount: 11000,
+        freelancer: {
+            img: face3,
+            name: "Sundar Laal",
+        },
+        dateCreated: "June 29, 2024",
+        status: "Completed",
+    },
+    {
+        milestoneNumber: 4,
+        label: "Unit testing of Auth",
+        amount: 9000,
+        freelancer: {
+            img: face4,
+            name: "Mike Jackson",
+        },
+        dateCreated: "Aug 23, 2024",
+        status: "Unactive",
+    },
+    {
+        milestoneNumber: 5,
+        label: "Make UI for landing page",
+        amount: 2000,
+        freelancer: {
+            img: face4,
+            name: "Mike Jackson",
+        },
+        dateCreated: "Aug 23, 2024",
+        status: "Completed",
+    },
+    {
+        milestoneNumber: 6,
+        label: "Deploy Website",
+        amount: 29000,
+        freelancer: {
+            img: face3,
+            name: "Mike Jackson",
+        },
+        dateCreated: "Aug 23, 2024",
+        status: "In-progress",
     },
 ];
 
@@ -199,7 +270,14 @@ const SingleProjectDetails = () => {
                         </div>
                     </div>
                 )}
-                {activeOption === "milestones" && <div>milestones</div>}
+                {activeOption === "milestones" && (
+                    <div>
+                        <h2 className="text-xl md:text-2xl mt-4 ">Project Milestones</h2>
+                        <div>
+                           <ProjectMilestoneTable milestonesData={MilestonesData}/>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
